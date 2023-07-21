@@ -1,4 +1,6 @@
-﻿using MVVMEssentials.ViewModels;
+﻿using CyauthPrac.Commands;
+using Firebase.Auth;
+using MVVMEssentials.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +12,7 @@ namespace CyauthPrac.ViewModels
 {
     internal class RegisterViewModel: ViewModelBase
     {
-		private string _email;
+		private string? _email;
 		public string Email
 		{
 			get
@@ -24,7 +26,7 @@ namespace CyauthPrac.ViewModels
 			}
 		}
 
-		private string _username;
+		private string? _username;
 		public string Username
 		{
 			get
@@ -38,7 +40,7 @@ namespace CyauthPrac.ViewModels
 			}
 		}
 
-		private string _password;
+		private string? _password;
 		public string Password
 		{
 			get
@@ -52,7 +54,7 @@ namespace CyauthPrac.ViewModels
 			}
 		}
 
-		private string _confirmPassword;
+		private string? _confirmPassword;
 		public string ConfirmPassword
 		{
 			get
@@ -68,6 +70,11 @@ namespace CyauthPrac.ViewModels
 
 		public ICommand SubmitCommand { get; }
 
-        public ICommand NavigateLoginCommand { get; }
+        public ICommand? NavigateLoginCommand { get; }
+
+		public RegisterViewModel(FirebaseAuthProvider firebaseAuthProvider)
+		{
+			SubmitCommand = new RegisterCommand(this, firebaseAuthProvider);
+		}
     }
 }

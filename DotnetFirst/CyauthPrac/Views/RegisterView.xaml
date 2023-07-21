@@ -36,17 +36,17 @@
 
             <StackPanel Grid.Row="2">
                 <TextBlock Text="Password" />
-                <components:BindablePasswordBox />
+                <components:BindablePasswordBox Password="{Binding Password, UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
 
             <StackPanel Grid.Row="3">
                 <TextBlock Text="Confirm Password" />
-                <components:BindablePasswordBox />
+                <components:BindablePasswordBox Password="{Binding ConfirmPassword, UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
 
-            <Button Grid.Row="4" Margin="0 20 0 0" Content="Submit" />
-            
-            <Button Grid.Row="5" Margin="0 10 0 0" Content="Already have an account? Login" Click="Button_Click">
+            <Button Grid.Row="4" Margin="0 20 0 0" Command="{Binding SubmitCommand}" Content="Submit" />
+
+            <Button Grid.Row="5" Margin="0 10 0 0" Command="{Binding NavigateLoginCommand}" Content="Already have an account? Login">
                 <Button.Style>
                     <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
                         <Setter Property="Background" Value="Transparent" />

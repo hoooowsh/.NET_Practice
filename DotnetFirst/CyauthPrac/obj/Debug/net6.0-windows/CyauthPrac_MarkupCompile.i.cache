@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\cynorix\Desktop\sheng_personal\.NET_project\.NET_Practice\DotnetFirst\CyauthPrac\App.xaml
-2-1919459866
+3-1598562575
 
-8-2106270590
+10-1584295950
 231-1178949869
-MainWindow.xaml;Views\RegisterView.xaml;
+MainWindow.xaml;Views\LoginView.xaml;Views\RegisterView.xaml;
 
-False
+True
 
